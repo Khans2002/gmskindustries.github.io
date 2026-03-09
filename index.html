@@ -31,7 +31,12 @@
     <nav id="navbar">
       <div class="nav-container">
         <div class="logo">GMSK Industries</div>
-        <div class="nav-links">
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
           <a href="#about">About</a>
           <a href="#subsidiaries">Companies</a>
           <a href="#leadership">Leadership</a>
@@ -59,8 +64,8 @@
         <h2 class="section-title fade-in">About GMSK Industries</h2>
         <p class="section-subtitle fade-in">Innovating the future, making technology accessible.</p>
         <div class="about-content fade-in delay-1">
-          <p>At GMSK Industries, our overarching mission is driven by ruthless innovation and a commitment to radical
-            affordability. We believe that powerful technology should not be locked behind expensive paywalls. We are
+          <p>At GMSK Industries, our overarching mission is driven by continuous innovation and a commitment to broad
+            accessibility. We believe that powerful technology should not be locked behind expensive paywalls. We are
             dedicated to creating our own ecosystem of premium products—from advanced IDEs and secure custom browsers to
             proprietary LLMs, visual intelligence architectures, and future robotics.</p>
           <br>
@@ -79,14 +84,29 @@
 
         <div class="grid-container">
           <!-- Sameer Hindustan Tech -->
-          <div class="grid-card fade-in delay-1">
+          <div class="grid-card fade-in delay-1" style="grid-column: 1 / -1;">
             <div class="card-content">
               <h3>Sameer Hindustan Tech</h3>
-              <p>The core software and technology division.</p>
+              <p>The core software, AI, and technology division powering the GMSK ecosystem.</p>
             </div>
-            <div class="tech-sub-links" style="margin-bottom: 24px;">
-              <a href="#hindide" class="product-link">HindIDE (Editor)</a>
-              <a href="#sameerai" class="product-link">Sameer AI (Agent)</a>
+
+            <div class="tech-sub-links"
+              style="margin-bottom: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+              <div>
+                <h4 style="font-size: 14px; margin-bottom: 8px; color: #fff;">Software & Apps</h4>
+                <a href="#hindide" class="product-link" style="display: block; margin-bottom: 4px;">HindIDE (Editor)</a>
+                <a href="#browser" class="product-link" style="display: block;">Custom Browser</a>
+              </div>
+              <div>
+                <h4 style="font-size: 14px; margin-bottom: 8px; color: #fff;">AI & Intelligence</h4>
+                <a href="#sameerai" class="product-link" style="display: block; margin-bottom: 4px;">Sameer AI
+                  (Agent)</a>
+                <a href="#visual" class="product-link" style="display: block;">Visual Intelligence</a>
+              </div>
+              <div>
+                <h4 style="font-size: 14px; margin-bottom: 8px; color: #fff;">LLMs</h4>
+                <a href="#models" class="product-link" style="display: block;">Open Parameter Models</a>
+              </div>
             </div>
 
             <!-- Direct Download Section -->
@@ -94,31 +114,42 @@
               <p style="font-size: 14px; margin-bottom: 12px; color: #fff;"><strong>Download HindIDE
                   Pre-Release:</strong></p>
               <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <a href="https://github.com/Khans2002/HindIDE-by-GMSK-Industries/actions/runs/13764843948/artifacts/2689617277"
-                  class="btn btn-primary" style="padding: 8px 16px; font-size: 12px; border-radius: 6px;">Download for
-                  Linux/Ubuntu</a>
-                <a href="https://github.com/Khans2002/HindIDE-by-GMSK-Industries/actions" class="btn btn-primary"
+                <a href="https://github.com/Khans2002/HindIDE-by-GMSK-Industries/releases" class="btn btn-primary"
+                  style="padding: 8px 16px; font-size: 12px; border-radius: 6px;">Download for Linux/Ubuntu</a>
+                <a href="https://github.com/Khans2002/HindIDE-by-GMSK-Industries/releases" class="btn btn-primary"
                   style="padding: 8px 16px; font-size: 12px; border-radius: 6px; background-color: #333;">Windows &
                   Mac</a>
               </div>
             </div>
           </div>
 
-          <!-- Future Company Placeholder -->
+          <!-- Sameer OS -->
           <div class="grid-card fade-in delay-2">
             <div class="card-content">
-              <h3>GMSK Aerospace</h3>
-              <p>Pioneering future mobility and exploration.</p>
-              <span class="badge">Coming Soon</span>
+              <h3>Sameer OS</h3>
+              <p>A completely private, secure operating system built on Linux with deeply integrated native AI
+                intelligence.</p>
+              <span class="badge">In Development</span>
             </div>
           </div>
 
-          <!-- Future Company Placeholder -->
+          <!-- GMSK Processor -->
           <div class="grid-card fade-in delay-3">
             <div class="card-content">
-              <h3>GMSK Financial</h3>
-              <p>Next-generation decentralised trading networks.</p>
-              <span class="badge">Coming Soon</span>
+              <h3>GMSK Processor</h3>
+              <p>Custom proprietary silicon processor architectures specialized for AI and Machine Learning workloads.
+              </p>
+              <span class="badge">Hardware Concept</span>
+            </div>
+          </div>
+
+          <!-- GitHub Hub -->
+          <div class="grid-card fade-in delay-1">
+            <div class="card-content">
+              <h3>Open Source Hub</h3>
+              <p>Explore the complete foundation of our engineering projects on GitHub.</p>
+              <a href="https://github.com/Khans2002" target="_blank" class="btn btn-primary"
+                style="margin-top: 20px; font-size: 12px;">Visit GMSK GitHub</a>
             </div>
           </div>
         </div>
@@ -134,13 +165,13 @@
           <h3 style="font-size: 28px; margin-bottom: 8px;">Gooty Mohammed Sameer Khan</h3>
           <p style="color: var(--accent-color); font-weight: 500; margin-bottom: 16px;">Founder & CEO</p>
           <div class="leadership-bio">
-            <p>As the visionary behind GMSK Industries, Sameer is dedicated to disrupting the traditional tech landscape
-              by experimenting with uncharted ideas and rapidly building new, high-performance systems from the ground
+            <p>As the visionary behind GMSK Industries, Sameer is dedicated to advancing the traditional tech landscape
+              by experimenting with innovative ideas and rapidly building new, high-performance systems from the ground
               up.</p>
             <br>
             <p>His philosophy centers around continuous innovation—constantly pushing the boundaries of what is possible
               in AI, application development, and systems architecture. Above all, his leadership is defined by the
-              belief that enterprise-grade technology must be radically affordable and accessible to the everyday user.
+              belief that enterprise-grade technology must be highly affordable and accessible to the everyday user.
             </p>
           </div>
         </div>

@@ -282,6 +282,22 @@ footer p {
   transition-delay: 0.3s;
 }
 
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 2px;
+  background-color: #f5f5f7;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
 /* About & Leadership Formatting */
 .about-content,
 .leadership-bio {
@@ -323,7 +339,26 @@ footer p {
 
   .nav-links {
     display: none;
-    /* Hide standard links on mobile */
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 15px 0;
+    font-size: 16px;
+    text-align: center;
   }
 
   .grid-card {
@@ -334,7 +369,6 @@ footer p {
   .leadership-bio {
     font-size: 16px;
     text-align: left;
-    /* Better readability on mobile */
     padding: 0 15px;
   }
 

@@ -6,6 +6,24 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize Background Animation
     initParticles();
 
+    // Hamburger Menu Mobile Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+
     const elementsToAnimate = document.querySelectorAll('.fade-in');
 
     const observerOptions = {
