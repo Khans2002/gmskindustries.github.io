@@ -1,0 +1,344 @@
+/* Global Styles & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --bg-color: #000000;
+  --text-color: #f5f5f7;
+  --text-muted: #86868b;
+  --accent-color: #0066cc;
+  --accent-hover: #0077ed;
+  --card-bg: #1d1d1f;
+  --nav-bg: rgba(0, 0, 0, 0.7);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  /* Let clicks pass through to the site */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base Typography */
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* Sticky Blurred Navbar */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 48px;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 24px;
+  color: #c4c4c6;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 48px;
+}
+
+.hero-content {
+  z-index: 10;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.hero-subtitle {
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.hero-description {
+  font-size: 20px;
+  font-weight: 400;
+  color: #a1a1a6;
+  margin-bottom: 32px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 980px;
+  font-size: 14px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: scale(1.02);
+}
+
+/* Background Gradient Effect */
+.hero-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(0, 102, 204, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Subsidiary Section */
+.subsidiary-section {
+  padding: 100px 20px;
+  background-color: transparent;
+  /* Changed from var(--bg-color) to let particles show through */
+}
+
+.section-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 20px;
+  margin-bottom: 60px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.grid-card {
+  background-color: var(--card-bg);
+  border-radius: 18px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.grid-card:hover {
+  transform: translateY(-8px);
+  background-color: #242426;
+}
+
+.card-content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.card-content p {
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #86868b;
+}
+
+.tech-sub-links {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-link {
+  color: var(--accent-color);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.product-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  padding: 40px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+footer p {
+  margin-bottom: 8px;
+}
+
+/* --- Scroll Animations --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.delay-3 {
+  transition-delay: 0.3s;
+}
+
+/* About & Leadership Formatting */
+.about-content,
+.leadership-bio {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #c4c4c6;
+  text-align: center;
+}
+
+.leadership-card {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: var(--card-bg);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .nav-links {
+    display: none;
+    /* Hide standard links on mobile */
+  }
+
+  .grid-card {
+    padding: 30px;
+  }
+
+  .about-content,
+  .leadership-bio {
+    font-size: 16px;
+    text-align: left;
+    /* Better readability on mobile */
+    padding: 0 15px;
+  }
+
+  .leadership-card {
+    padding: 24px;
+  }
+}
